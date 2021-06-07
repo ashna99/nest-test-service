@@ -60,11 +60,6 @@ export class logInService {
       // function that sends jwt back or resolves promise with account parsing error
       const handleSuccess = (account: any): void => {
         try {
-          /*
-                       const idToken = account.getIdToken().getJwtToken();
-                       const decodedIDToken = jwt.decode(idToken, { complete: true });
-                       const refreshToken = account.getRefreshToken().getToken();
-                     */
           const accessToken = account.getAccessToken().getJwtToken();
           const decodedAccessToken = jwt.decode(accessToken, {
             complete: true,
